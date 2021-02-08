@@ -9,7 +9,8 @@ const Hello = () => {
       <div className="Hello">
         <img width="200px" alt="icon" src={icon} />
       </div>
-      <h1>electron-react-boilerplate</h1>
+      <h1>Andonis</h1>
+
       <div className="Hello">
         <a
           href="https://electron-react-boilerplate.js.org/"
