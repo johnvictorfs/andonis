@@ -6,4 +6,4 @@ A Electron App to manage (and download) your Anime collection and lists, locally
 
 ## License
 
-MIT © [John Victor, Guilherme Vasconcelos](https://github.com/johnvictorfs/simple-utilities-mod/blob/master/LICENSE)
+MIT © [John Victor, Guilherme Vasconcelos](https://github.com/johnvictorfs/andonis/blob/master/LICENSE)
