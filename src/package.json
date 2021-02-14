@@ -1,14 +1,20 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "electron-react-boilerplate",
-  "version": "2.3.0",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "andonis",
+  "productName": "Andonis",
+  "version": "0.0.1",
+  "description": "A Electron App to manage (and download) your Anime collection and lists, locally, with AniList integration",
   "main": "./main.prod.js",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://github.com/electron-react-boilerplate"
+    "name": "John Victor",
+    "email": "johnvfs@protonmail.com",
+    "url": "https://github.com/johnvictorfs"
   },
+  "contributors": [
+    {
+      "name": "Guilherme Vasconcelos",
+      "url": "https://github.com/guilherme-vasconcelos"
+    }
+  ],
   "scripts": {
     "electron-rebuild": "node -r ../.erb/scripts/BabelRegister.js ../.erb/scripts/ElectronRebuild.js",
     "postinstall": "yarn electron-rebuild"
