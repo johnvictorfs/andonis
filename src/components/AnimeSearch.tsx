@@ -72,7 +72,7 @@ const AnimeSearch: React.FC = () => {
   const [query, setQuery] = useState('')
   const classes = useStyles()
 
-  const [getAnime, { loading, data }] = useLazyQuery(SEARCH_ANIME)
+  const [getAnime, { loading }] = useLazyQuery(SEARCH_ANIME)
 
   const searchAnime = () => {
     getAnime({ variables: { query } })
