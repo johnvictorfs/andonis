@@ -16,6 +16,7 @@ import {
   ListItemIcon
 } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+import { SearchAnime } from './__generated__/SearchAnime'
 
 const useStyles = makeStyles((theme) => ({
   circularProgress: {
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const SEARCH_ANIME = gql`
-  query($query: String) {
+  query SearchAnime($query: String) {
     Page(perPage: 6) {
       media(search: $query, type: ANIME) {
         id
@@ -78,28 +79,19 @@ const SEARCH_ANIME = gql`
         title {
           userPreferred
         }
+        seasonYear
+        format
       }
     }
   }
 `
-
-interface Media {
-  id: number
-  coverImage: {
-    large: string
-    color: string
-  }
-  title: {
-    userPreferred: string
-  }
-}
 
 const AnimeSearch: React.FC = () => {
   const [query, setQuery] = useState('')
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const classes = useStyles()
 
-  const [getAnime, { loading, data }] = useLazyQuery(SEARCH_ANIME)
+  const [getAnime, { loading, data }] = useLazyQuery<SearchAnime>(SEARCH_ANIME)
 
   const searchAnime = () => {
     getAnime({ variables: { query } })
@@ -156,19 +148,24 @@ const AnimeSearch: React.FC = () => {
               <Paper>
                 <Grid container spacing={1}>
                   <List component="nav" aria-label="anime-search-results">
-                    {data.Page.media.map((media: Media) => (
-                      <ListItem key={media.id} button>
+                    {data?.Page?.media?.map((media) => (
+                      <ListItem key={media?.id} button>
                         <ListItemIcon>
                           <img
-                            src={media.coverImage.large}
-                            alt={media.title.userPreferred}
+                            src={media?.coverImage?.large || '#'}
+                            alt={media?.title?.userPreferred || 'anime-cover'}
                             width="48"
                             height="64"
                             style={{ marginRight: 5 }}
                           />
                         </ListItemIcon>
 
-                        <ListItemText primary={media.title.userPreferred} />
+                        <ListItemText
+                          primary={media?.title?.userPreferred}
+                          secondary={`${media?.seasonYear || 'Unknown'} (${
+                            media?.format
+                          })`}
+                        />
                       </ListItem>
                     ))}
                   </List>

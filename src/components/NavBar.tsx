@@ -6,21 +6,21 @@ import AnimeSearch from '@/components/AnimeSearch'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    background: theme.palette.background.paper
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 1,
-  },
+    marginRight: theme.spacing(2)
+  }
 }))
 
 const NavBar: React.FC = () => {
   const classes = useStyles()
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.root} color="inherit">
       <Toolbar>
         <IconButton
           edge="start"

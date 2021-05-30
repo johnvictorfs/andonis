@@ -13,6 +13,8 @@
     "start": "node -r @babel/register ./.erb/scripts/CheckPortInUse.js && cross-env yarn start:renderer",
     "start:main": "cross-env NODE_ENV=development electron -r ./.erb/scripts/BabelRegister ./src/main.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development webpack serve --config ./.erb/configs/webpack.config.renderer.dev.babel.js",
+    "anilist:schema-download": "mkdir -p data && apollo schema:download --endpoint=https://graphql.anilist.co data/anilist-schema.json",
+    "anilist:gen-types": "yarn anilist:schema-download && apollo codegen:generate --localSchemaFile=data/anilist-schema.json --target=typescript --tagName=gql",
     "test": "jest"
   },
   "lint-staged": {
@@ -180,6 +182,7 @@
     "@types/webpack-env": "^1.15.2",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
+    "apollo": "^2.33.4",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.2.2",

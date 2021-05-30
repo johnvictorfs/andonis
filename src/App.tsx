@@ -6,18 +6,27 @@ import Routes from '@/Routes'
 
 const theme = createMuiTheme({
   palette: {
-    type: 'dark'
+    type: 'dark',
+    text: {
+      disabled: '#9B9B9B',
+      primary: '#AFC0D5',
+      secondary: '#DADADA'
+    },
+    background: {
+      default: '#243340',
+      paper: '#192330'
+    }
   }
 })
 
 const App: React.FC = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
+  <ApolloProvider client={anilistClient}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
 
-    <ApolloProvider client={anilistClient}>
       <Routes />
-    </ApolloProvider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </ApolloProvider>
 )
 
 export default App
