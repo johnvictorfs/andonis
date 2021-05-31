@@ -2,7 +2,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
-import AnimeSearch from '@/components/AnimeSearch'
+import AnimeSearch from '@/components/header/AnimeSearch'
+import AniListIcon from '@/components/icons/AniListIcon'
+import Button from '@/components/material/Button'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginRight: theme.spacing(2)
+  },
+  separator: {
+    flexGrow: 1
   }
 }))
 
@@ -36,6 +41,12 @@ const NavBar: React.FC = () => {
         </Typography>
 
         <AnimeSearch />
+
+        <span className={classes.separator} />
+
+        <Button variant="contained" color="primary" startIcon={<AniListIcon />}>
+          Login
+        </Button>
       </Toolbar>
     </AppBar>
   )

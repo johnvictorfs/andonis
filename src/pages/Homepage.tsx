@@ -1,13 +1,9 @@
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/header/NavBar'
 
 const Homepage: React.FC = () => {
   return (
     <>
       <NavBar />
-
-      <div>
-        <h1>Andonis</h1>
-      </div>
     </>
   )
 }
