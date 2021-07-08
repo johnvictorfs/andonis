@@ -1,6 +1,6 @@
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 
-import { SearchAnime_Page_media } from '../__generated__/SearchAnime'
+import { SearchAnime_Page_media } from '@/services/anilist/__generated__/SearchAnime'
 
 type Props = {
   media: SearchAnime_Page_media

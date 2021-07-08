@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { MediaFormat } from "./../../../__generated__/globalTypes";
+import { MediaStatus, MediaFormat } from "./../../../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: SearchAnime
@@ -35,6 +35,10 @@ export interface SearchAnime_Page_media {
    * The id of the media
    */
   id: number;
+  /**
+   * The current releasing status of the media
+   */
+  status: MediaStatus | null;
   /**
    * The cover images of the media
    */

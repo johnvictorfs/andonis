@@ -12,10 +12,10 @@ import {
   makeStyles
 } from '@material-ui/core'
 
-import { SearchAnime } from '@/components/__generated__/SearchAnime'
 import AnimeListItem from '@/components/anime/AnimeListItem'
 import LoadingInput from '@/components/inputs/LoadingInput'
 import { SEARCH_ANIME } from '@/services/anilist/queries'
+import { SearchAnime } from '@/services/anilist/__generated__/SearchAnime'
 
 const useStyles = makeStyles(() => ({
   previewPaper: {

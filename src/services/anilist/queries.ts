@@ -5,6 +5,7 @@ export const SEARCH_ANIME = gql`
     Page(perPage: 6) {
       media(search: $query, type: ANIME) {
         id
+        status
         coverImage {
           large
           color
