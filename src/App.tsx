@@ -1,28 +1,9 @@
-import { createMuiTheme, ThemeProvider, CssBaseline } from '@material-ui/core'
+import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import { ApolloProvider } from '@apollo/client'
 
 import { anilistClient } from '@/services/anilist'
+import { theme } from '@/theme'
 import Routes from '@/Routes'
-
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    text: {
-      disabled: '#9B9B9B',
-      primary: '#AFC0D5',
-      secondary: '#DADADA'
-    },
-    background: {
-      default: '#243340',
-      paper: '#192330'
-    },
-    primary: {
-      main: '#354B5E',
-      dark: '#213441',
-      light: '#AFC0D5'
-    }
-  }
-})
 
 const App: React.FC = () => (
   <ApolloProvider client={anilistClient}>
