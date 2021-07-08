@@ -8,7 +8,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'comma-dangle': ['error', 'never'],
     'prettier/prettier': ['error', { trailingComma: 'none' }],
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
+    'react/prop-types': 'off'
   },
   parserOptions: {
     ecmaVersion: 2020,
