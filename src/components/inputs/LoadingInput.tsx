@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   circularProgress: {
-    marginLeft: theme.spacing(1)
+    marginLeft: theme.spacing(1),
+    color: theme.palette.secondary.main
   },
   inputRoot: {
     color: 'inherit'
@@ -68,7 +69,7 @@ const LoadingInput: React.FC<Props> = ({
 
   return (
     <div className={classes.search}>
-      {/* {!loading && <div className={classes.searchIcon}>{icon}</div>} */}
+      {loading || <div className={classes.searchIcon}>{icon}</div>}
 
       <InputBase
         disabled={loading}
@@ -77,7 +78,7 @@ const LoadingInput: React.FC<Props> = ({
           input: classes.inputInput
         }}
         startAdornment={
-          loading || (
+          loading && (
             <CircularProgress
               className={classes.circularProgress}
               size="20px"
